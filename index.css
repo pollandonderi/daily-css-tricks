@@ -1,0 +1,35 @@
+/* image behind a text */
+
+.image-word{
+color: transparent;
+margin: 0;
+font-size: 4rem;
+background-image: url("assets/colors.jpg");
+background-size: cover;
+background-clip: text;
+-webkit-background-clip: text;
+}
+
+/* image inside another image */
+.image{
+    position: relative;
+    background-image: url('assets/frame.jpg');
+    width: 600px;
+    height: 600px;
+    background-size: cover;
+}
+.image::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    background: url('assets/colors.jpg');
+    width: 600px;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    mix-blend-mode: screen;
+
+}
